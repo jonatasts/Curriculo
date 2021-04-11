@@ -9,7 +9,7 @@ import {
   View,
   Image
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
 import profile from './assets/profile.png';
 
@@ -23,10 +23,10 @@ const App = () => {
           <Text style={style.name}>Jônatas Santos</Text>
           <Text style={style.work}>React Native Developer</Text>
         </View>
-        <View>
-          <Icon style={style.icon} name="GitHub" />
-          <Icon style={style.icon} name="Portfolio" />
-          <Icon style={style.icon} name="Linkedin" />
+        <View style={style.icons}>
+          <FontAwesomeIcon style={[style.icon, style.icon_github]} name="github" size={27} />
+          <FontAwesomeIcon style={style.icon} name="chrome" size={23} />
+          <FontAwesomeIcon style={style.icon} name="linkedin-square" size={23} />
         </View>
       </SafeAreaView>
     </>
@@ -35,21 +35,33 @@ const App = () => {
 
 const style = StyleSheet.create({
   page: {
-    backgroundColor: '#151515',
+    backgroundColor: '#22272E',
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
   },
 
   image: {
-    width: 220,
-    height: 220,
+    marginTop: 120,
+    width: 190,
+    height: 190,
     borderRadius: 125,
+    marginBottom: 12,
   },
 
   icon: {
     color: '#FFF',
     textAlign: 'center',
+    marginHorizontal: 12,
+    marginTop: 10,
+  },
+
+  icon_github: {
+    marginTop: 8,
+  },
+
+  icons: {
+    flexDirection: 'row',
   },
 
   name: {
