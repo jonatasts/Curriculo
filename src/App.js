@@ -10,12 +10,14 @@ import {
   Image,
   Easing,
   Animated,
+  Alert,
+  TouchableOpacity,
 } from 'react-native';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
 import profile from './assets/profile.png';
 import logo from './assets/react-logo.png';
-import styles from './styles'
+import styles from './Styles'
 
 const App = () => {
   const [spinAnim, setSpinAnim] = useState(new Animated.Value(0));
@@ -35,6 +37,21 @@ const App = () => {
     ).start();
   });
 
+  function handleIconLink(option) {
+    switch (option) {
+      case 'github':
+        Alert.alert('Meu GitHub', 'https://github.com/jonatasts/');
+        break;
+      case 'chrome':
+        Alert.alert('Meu Portfólio', 'https://jonatassantos.vercel.app/');
+        break;
+      case 'linkedin-square':
+        Alert.alert('Meu Linkedin', 'https://www.linkedin.com/in/jonatas-s-santos/');
+        break;
+    }
+
+  }
+
   return (
     <SafeAreaView style={styles.page}>
       <View>
@@ -45,9 +62,18 @@ const App = () => {
       </View>
 
       <View style={styles.icons}>
-        <FontAwesomeIcon style={[styles.icon, styles.icon_github]} name="github" size={27} />
-        <FontAwesomeIcon style={styles.icon} name="chrome" size={23} />
-        <FontAwesomeIcon style={styles.icon} name="linkedin-square" size={23} />
+        <TouchableOpacity onPress={() => handleIconLink('github')}>
+          <FontAwesomeIcon style={[styles.icon, styles.icon_github]} name="github" size={27} />
+        </TouchableOpacity>
+
+
+        <TouchableOpacity onPress={() => handleIconLink('chrome')}>
+          <FontAwesomeIcon style={styles.icon} name="chrome" size={23} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => handleIconLink('linkedin-square')}>
+          <FontAwesomeIcon style={styles.icon} name="linkedin-square" size={23} />
+        </TouchableOpacity>
       </View>
 
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
