@@ -9,7 +9,7 @@
 
 <br>
 
-<img src="src/assets/curriculoApp.gif" height="500" width="250">
+<img src="src/assets/curriculoApp.gif" height="500" width="250" alt="Currículo">
 
 <br>Projeto em React Native.<br>
 
