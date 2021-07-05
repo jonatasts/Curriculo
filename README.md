@@ -1,4 +1,4 @@
-# Curriculo
+# Currículo
 
 <h3>Para executar no Visual Studio:</h3>
 • Selecione o projeto<br>
